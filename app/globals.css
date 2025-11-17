@@ -1,1 +1,34 @@
 @import "tailwindcss";
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+.tabs-home .ant-segmented-item-label {
+  padding: 0 !important;
+}
+.ant-picker > *:nth-child(4) {
+  display: none !important;
+}
+.ant-picker > *:nth-child(3) {
+  display: none !important;
+}

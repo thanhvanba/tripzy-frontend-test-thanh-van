@@ -1,0 +1,79 @@
+{
+  "export_const_locations": [
+    {
+      "short_code": "MD",
+      "english_name": "Moldova, Republic of",
+      "code_state": "+373"
+    },
+    {
+      "short_code": "MC",
+      "english_name": "Monaco",
+      "code_state": "+377"
+    },
+    {
+      "short_code": "AN",
+      "english_name": "Netherlands Antilles",
+      "code_state": "+599"
+    },
+    {
+      "short_code": "NC",
+      "english_name": "New Caledonia",
+      "code_state": "+687"
+    },
+    {
+      "short_code": "NZ",
+      "english_name": "New Zealand",
+      "code_state": "+64"
+    },
+    {
+      "short_code": "NU",
+      "english_name": "Niue",
+      "code_state": "+683"
+    },
+    {
+      "short_code": "NF",
+      "english_name": "Norfolk Island",
+      "code_state": "+672"
+    },
+    {
+      "short_code": "NP",
+      "english_name": "Northern Mariana Islands",
+      "code_state": "+1 670"
+    },
+    {
+      "short_code": "BT",
+      "english_name": "Bhutan",
+      "code_state": "+975"
+    },
+    {
+      "short_code": "HN",
+      "english_name": "Honduras",
+      "code_state": "+504"
+    },
+    {
+      "short_code": "HK",
+      "english_name": "Hong Kong",
+      "code_state": "+852"
+    },
+    {
+      "short_code": "SG",
+      "english_name": "Singapore",
+      "code_state": "+65"
+    },
+    {
+      "short_code": "HCM",
+      "english_name": "Ho Chi Minh City",
+      "code_state": "+84"
+    },
+    {
+      "short_code": "HN",
+      "english_name": "Hanoi",
+      "code_state": "+84"
+    },
+    {
+      "short_code": "BT",
+      "english_name": "Ben Thanh",
+      "code_state": "+84"
+    }
+  ]
+}
