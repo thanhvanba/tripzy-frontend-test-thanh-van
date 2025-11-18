@@ -106,6 +106,16 @@ export function SearchForm() {
               name="to"
               rules={[
                 { required: true, message: "Please select a destination" },
+                {
+                  validator: (_, value) => {
+                    if (!value || value !== formData.from) {
+                      return Promise.resolve();
+                    }
+                    return Promise.reject(
+                      new Error("Same location not allowed")
+                    );
+                  },
+                },
               ]}
             >
               <LocationSelect
@@ -129,7 +139,20 @@ export function SearchForm() {
               }
               name="departureDate"
               rules={[
-                { required: true, message: "Please select a departure date" },
+                {
+                  required: true,
+                  message: "Please select a departure date",
+                },
+                {
+                  validator: (_, value) => {
+                    if (!value) return Promise.resolve();
+                    return value.isAfter(dayjs(), "day")
+                      ? Promise.resolve()
+                      : Promise.reject(
+                          new Error("Departure must be after today")
+                        );
+                  },
+                },
               ]}
             >
               <CustomDatePicker
@@ -160,6 +183,23 @@ export function SearchForm() {
                 {
                   required: formData.isRoundTrip,
                   message: "Please select a return date",
+                },
+                {
+                  validator: (_, value) => {
+                    if (
+                      !formData.isRoundTrip ||
+                      !formData.departureDate ||
+                      !value
+                    ) {
+                      return Promise.resolve();
+                    }
+                    if (value.isAfter(formData.departureDate)) {
+                      return Promise.resolve();
+                    }
+                    return Promise.reject(
+                      new Error("Return date must be after departure")
+                    );
+                  },
                 },
               ]}
             >
@@ -198,7 +238,7 @@ export function SearchForm() {
                 });
                 setErrors({ ...errors, passengers: undefined });
               }}
-              className="w-full!"
+              className="w-full! custom-input-number h-[52px]!"
             />
           </Form.Item>
         </div>

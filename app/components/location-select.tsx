@@ -1,8 +1,9 @@
 "use client";
 
 import { Select } from "antd";
-import locationsData from "../data/locations.json";
 import { FaBusAlt } from "react-icons/fa";
+import "../globals.css";
+import { locations } from "../data/location";
 
 interface Location {
   short_code: string;
@@ -21,15 +22,15 @@ export function LocationSelect({
   onChange,
   placeholder = "Enter city, location...",
 }: LocationSelectProps) {
-  const options = locationsData.export_const_locations.map((loc: Location) => ({
+  const options = locations.map((loc: Location) => ({
     value: loc.english_name,
     label: (
-      <div>
+      <div className="px-4 py-2">
         <div className="font-semibold text-sm text-[#0E0E12]">
-          {loc.english_name}
+          {loc.short_code} - {loc.english_name}
         </div>
         <div className="font-semibold text-xs text-[#65686F]">
-          {loc.short_code}
+          {loc.code_state}
         </div>
       </div>
     ),
@@ -43,10 +44,11 @@ export function LocationSelect({
       onChange={onChange}
       placeholder={placeholder}
       options={options}
+      optionLabelProp="value"
       filterOption={(input, option) =>
         (option?.value as string).toLowerCase().includes(input.toLowerCase())
       }
-      className="w-full"
+      className="w-full custom-select h-[52px]!"
       dropdownStyle={{ width: 400 }}
     />
   );

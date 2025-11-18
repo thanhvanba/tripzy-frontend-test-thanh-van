@@ -23,12 +23,94 @@
     padding: 0 40px;
   }
 }
+
+/* custom tab home */
 .tabs-home .ant-segmented-item-label {
   padding: 0 !important;
 }
+
+.tabs-home .ant-segmented-thumb {
+  display: none !important;
+}
+
+.tabs-home .ant-segmented-item-selected {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* custom datepicker */
 .ant-picker > *:nth-child(4) {
   display: none !important;
 }
 .ant-picker > *:nth-child(3) {
   display: none !important;
+}
+
+.custom-date-picker .ant-picker {
+  border-width: 1px !important;
+}
+
+.custom-date-picker.ant-picker:hover {
+  border-color: #19c0ff !important;
+  border-width: 1px !important;
+}
+
+.custom-date-picker.ant-picker-focused {
+  border-color: #19c0ff !important;
+  border-width: 1px !important;
+  box-shadow: none !important;
+}
+
+.custom-date-picker .ant-picker-prefix {
+  margin-right: 8px !important;
+}
+
+/* Ẩn cái thumb highlight (viền chạy chạy) */
+.custom-date-picker .ant-picker-range-separator {
+  display: none !important; /* bỏ dấu gạch giữa 2 ô */
+}
+
+.custom-date-picker .ant-picker-focused {
+  box-shadow: none !important; /* bỏ shadow xanh khi focus */
+}
+
+.custom-date-picker .ant-picker-active-bar {
+  display: none !important; /* chính là cái bar chạy chạy */
+}
+
+/* custom select */
+.custom-select .ant-select-selector {
+  border-width: 1px !important;
+}
+
+.custom-select.ant-select-focused .ant-select-selector {
+  border-color: #19c0ff !important;
+  box-shadow: none !important;
+}
+
+.custom-select.ant-select:hover .ant-select-selector {
+  border-color: #19c0ff !important;
+}
+
+.custom-select .ant-select-prefix {
+  margin-right: 8px !important;
+}
+/* custom input */
+.custom- -number.ant-input-number-affix-wrapper {
+  border-width: 1px !important;
+}
+
+.custom-input-number.ant-input-number-affix-wrapper:hover {
+  border-color: #19c0ff !important;
+  border-width: 1px !important;
+}
+
+.custom-input-number.ant-input-number-affix-wrapper-focused {
+  border-color: #19c0ff !important;
+  border-width: 1px !important;
+  box-shadow: none !important;
+}
+
+.custom-input-number .ant-input-number-prefix {
+  margin-right: 8px !important;
 }
