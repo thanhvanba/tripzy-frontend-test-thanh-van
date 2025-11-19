@@ -25,8 +25,8 @@ export function LocationSelect({
   const options = locations.map((loc: Location) => ({
     value: loc.english_name,
     label: (
-      <div className="px-4 py-2">
-        <div className="font-semibold text-sm text-[#0E0E12]">
+      <div className="px-3 sm:px-4 py-2">
+        <div className="font-semibold text-xs sm:text-sm text-[#0E0E12]">
           {loc.short_code} - {loc.english_name}
         </div>
         <div className="font-semibold text-xs text-[#65686F]">
@@ -49,7 +49,7 @@ export function LocationSelect({
         (option?.value as string).toLowerCase().includes(input.toLowerCase())
       }
       className="w-full custom-select h-[52px]!"
-      dropdownStyle={{ width: 400 }}
+      dropdownStyle={{ width: "calc(100vw - 32px)", maxWidth: 400 }}
     />
   );
 }

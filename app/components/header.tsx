@@ -22,7 +22,9 @@ export default function Header() {
           <span className="flex items-center justify-center font-bold">
             <FaStarOfLife size={40} />
           </span>
-          <span className="text-[28px] font-bold">Tripzy</span>
+          <span className="text-xl sm:text-2xl md:text-[28px] font-bold">
+            Tripzy
+          </span>
         </div>
       </div>
     </nav>

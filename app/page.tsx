@@ -17,12 +17,12 @@ export default function HomePage() {
       {/* Header */}
       <Header />
       <div className="relative">
-        <div className="flex flex-col items-center justify-center h-[45vh] py-12 pt-24 bg-linear-to-b from-[#F5F8FF] to-[#DBF5FF] relative">
-          <div className="absolute top-1/2 left-1/2 -translate-1/2 flex flex-col gap-2 whitespace-nowrap">
-            <h1 className="text-[40px] font-semibold text-[#121216] text-center">
+        <div className="flex flex-col items-center justify-center min-h-[40vh] sm:min-h-[45vh] py-8 sm:py-12 pt-20 sm:pt-24 bg-linear-to-b from-[#F5F8FF] to-[#DBF5FF] relative">
+          <div className="absolute top-1/2 left-1/2 -translate-1/2 flex flex-col gap-2">
+            <h1 className="text-2xl sm:text-3xl md:text-[40px] font-semibold text-[#121216] text-center">
               Travel Smarter, Not Harder
             </h1>
-            <p className="text-[18px] text-[#767689] text-center">
+            <p className="text-sm sm:text-base md:text-lg text-[#767689] text-center">
               Make every trip effortless. Tripzy lets you book rides and plan
               journeys with ease
             </p>
@@ -37,19 +37,20 @@ export default function HomePage() {
                 value={activeTab}
                 onChange={(val) => setActiveTab(val as string)}
                 size="large"
-                className="w-full p-3! bg-white! tabs-home"
+                className="w-full p-2 sm:p-3! bg-white! tabs-home"
                 options={[
                   {
                     label: (
                       <div
-                        className={`flex items-center justify-start px-4 py-3 gap-3 text-[#121216] rounded-lg hover:bg-[#EBF9FF] ${
+                        className={`flex items-center justify-center sm:justify-start px-2 sm:px-4 py-2 sm:py-3 gap-2 sm:gap-3 text-xs sm:text-sm md:text-base text-[#121216] rounded-lg hover:bg-[#EBF9FF] ${
                           activeTab === "bus" ? "bg-[#EBF9FF]" : ""
                         }`}
                       >
-                        <div className="bg-[#D3F3FF] rounded-full p-2.5">
-                          <FaBusAlt className="text-[#19C0FF]" size={28} />
+                        <div className="bg-[#D3F3FF] rounded-full p-1.5 sm:p-2.5">
+                          <FaBusAlt className="text-[#19C0FF] w-5 h-5 sm:w-7 sm:h-7" />
                         </div>
-                        Bus & Shuttle
+                        <span className="hidden sm:inline">Bus & Shuttle</span>
+                        <span className="sm:hidden">Bus</span>
                       </div>
                     ),
                     value: "bus",
@@ -57,14 +58,17 @@ export default function HomePage() {
                   {
                     label: (
                       <div
-                        className={`flex items-center justify-start px-4 py-3 gap-3 text-[#121216] rounded-lg hover:bg-[#F4FFEB] ${
+                        className={`flex items-center justify-center sm:justify-start px-2 sm:px-4 py-2 sm:py-3 gap-2 sm:gap-3 text-xs sm:text-sm md:text-base text-[#121216] rounded-lg hover:bg-[#F4FFEB] ${
                           activeTab === "hotel" ? "bg-[#F4FFEB]" : "bg-white"
                         }`}
                       >
-                        <div className="bg-[#E8FBCC] rounded-full p-2.5">
-                          <FaHotel className="text-[#447A11]" size={28} />
+                        <div className="bg-[#E8FBCC] rounded-full p-1.5 sm:p-2.5">
+                          <FaHotel className="text-[#447A11] w-5 h-5 sm:w-7 sm:h-7" />
                         </div>
-                        Hotel & Accommodation
+                        <span className="hidden sm:inline">
+                          Hotel & Accommodation
+                        </span>
+                        <span className="sm:hidden">Hotel</span>
                       </div>
                     ),
                     value: "hotel",
@@ -72,17 +76,14 @@ export default function HomePage() {
                   {
                     label: (
                       <div
-                        className={`flex items-center justify-start px-4 py-3 gap-3 text-[#121216] rounded-lg hover:bg-[#EBF4FF] ${
+                        className={`flex items-center justify-center sm:justify-start px-2 sm:px-4 py-2 sm:py-3 gap-2 sm:gap-3 text-xs sm:text-sm md:text-base text-[#121216] rounded-lg hover:bg-[#EBF4FF] ${
                           activeTab === "flight" ? "bg-[#EBF4FF]" : "bg-white"
                         }`}
                       >
-                        <div className="bg-[#E1EDFE] rounded-full p-2.5">
-                          <MdFlightTakeoff
-                            className="text-[#5664E1]"
-                            size={28}
-                          />
+                        <div className="bg-[#E1EDFE] rounded-full p-1.5 sm:p-2.5">
+                          <MdFlightTakeoff className="text-[#5664E1] w-5 h-5 sm:w-7 sm:h-7" />
                         </div>
-                        Flight
+                        <span className="">Flight</span>
                       </div>
                     ),
                     value: "flight",
@@ -90,15 +91,15 @@ export default function HomePage() {
                 ]}
               />
             </div>
-            <div className="w-full mb-6">
+            <div className="w-full mb-6 px-4 sm:px-6">
               {activeTab === "bus" && <SearchForm />}
               {activeTab === "hotel" && (
-                <p className="text-[#767689] text-lg text-center py-12">
+                <p className="text-[#767689] text-base sm:text-lg text-center py-8 sm:py-12">
                   No data
                 </p>
               )}
               {activeTab === "flight" && (
-                <p className="text-[#767689] text-lg text-center py-12">
+                <p className="text-[#767689] text-base sm:text-lg text-center py-8 sm:py-12">
                   No data
                 </p>
               )}

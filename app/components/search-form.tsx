@@ -65,38 +65,41 @@ export function SearchForm() {
       onFinish={handleSearch}
       initialValues={{ passengers: 1 }}
     >
-      <div className="flex flex-col md:flex-row md:gap-6 gap-4 p-4 justify-center">
-        <div className="flex flex-1 gap-2 items-end">
-          <div className="flex flex-1 flex-col gap-2">
-            <Form.Item
-              label={
-                <span className="block text-xs font-medium text-[#65686F]">
-                  FROM
-                </span>
-              }
-              name="from"
-              rules={[
-                {
-                  required: true,
-                  message: "Please select a departure location",
-                },
-              ]}
-            >
-              <LocationSelect
-                value={formData.from}
-                onChange={(value) => {
-                  console.log("🚀 ~ SearchForm ~ value:", value);
-                  setFormData({ ...formData, from: value });
-                  setErrors({ ...errors, from: undefined });
-                }}
-                placeholder="Enter city, terminal,..."
-              />
-            </Form.Item>
+      <div className="flex flex-col lg:flex-row lg:gap-6 gap-4 lg:p-4 justify-center">
+        <div className="flex flex-col lg:flex-row flex-1 gap-2 items-end">
+          <div className="flex items-end gap-2 w-full">
+            <div className="flex flex-1 flex-col gap-2">
+              <Form.Item
+                label={
+                  <span className="block text-xs font-medium text-[#65686F]">
+                    FROM
+                  </span>
+                }
+                name="from"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please select a departure location",
+                  },
+                ]}
+              >
+                <LocationSelect
+                  value={formData.from}
+                  onChange={(value) => {
+                    console.log("🚀 ~ SearchForm ~ value:", value);
+                    setFormData({ ...formData, from: value });
+                    setErrors({ ...errors, from: undefined });
+                  }}
+                  placeholder="Enter city, terminal,..."
+                />
+              </Form.Item>
+            </div>
+            <div className="rotate-90 lg:rotate-0 p-3 bg-white rounded-full shadow-lg mb-6">
+              <HiMiniArrowsRightLeft className="text-[#19C0FF]" size={24} />
+            </div>
           </div>
-          <div className="p-3 bg-white rounded-full shadow-lg mb-6">
-            <HiMiniArrowsRightLeft className="text-[#19C0FF]" size={24} />
-          </div>
-          <div className="flex flex-1 flex-col gap-2">
+
+          <div className="flex flex-1 flex-col gap-2 w-full">
             <Form.Item
               label={
                 <span className="block text-xs font-medium text-[#65686F]">
@@ -129,8 +132,8 @@ export function SearchForm() {
             </Form.Item>
           </div>
         </div>
-        <div className="flex flex-1 gap-2 items-end">
-          <div className="w-1/2 flex flex-col gap-2">
+        <div className="flex flex-col lg:flex-row flex-1 gap-2 items-end">
+          <div className="w-full lg:w-1/2 flex flex-col gap-2">
             <Form.Item
               label={
                 <span className="block text-xs font-medium text-[#65686F]">
@@ -165,7 +168,7 @@ export function SearchForm() {
               />
             </Form.Item>
           </div>
-          <div className="w-1/2 flex flex-col gap-2">
+          <div className="w-full lg:w-1/2 flex flex-col gap-2">
             <div className="flex items-center gap-2">
               <Checkbox
                 checked={formData.isRoundTrip}

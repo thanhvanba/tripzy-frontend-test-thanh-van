@@ -73,9 +73,9 @@ const CustomDatePicker = ({
         prefix={<PiCalendarBlankBold size={20} />}
         disabled={disabled || [false, true]}
         panelRender={() => (
-          <div className="flex gap-6 p-4 bg-white rounded-xl">
+          <div className="flex gap-3 md:gap-6 p-2 md:p-4 bg-white rounded-xl">
             {/* MONTH 1 */}
-            <div className="w-[280px]">
+            <div className="w-1/2 md:w-[280px]">
               <div className="flex justify-between items-center mb-2">
                 <button
                   className="p-2 hover:bg-gray-200 rounded-md"
@@ -83,7 +83,7 @@ const CustomDatePicker = ({
                 >
                   <LuChevronLeft />
                 </button>
-                <div className="font-semibold">
+                <div className="font-semibold text-xs sm:text-sm md:text-base">
                   {panelMonth.format("MMMM YYYY")}
                 </div>
                 <div className="w-8" />
@@ -100,10 +100,10 @@ const CustomDatePicker = ({
             </div>
 
             {/* MONTH 2 */}
-            <div className="w-[280px]">
+            <div className="w-1/2 md:w-[280px]">
               <div className="flex justify-between items-center mb-2">
                 <div className="w-8" />
-                <div className="font-semibold text-right">
+                <div className="font-semibold text-xs sm:text-sm md:text-base text-center">
                   {panelMonth.add(1, "month").format("MMMM YYYY")}
                 </div>
                 <button
@@ -146,7 +146,7 @@ function renderCell(
   const isToday = date.isSame(dayjs(), "day");
 
   const base =
-    "flex items-center justify-center w-[32px] h-[32px] rounded-xl transition";
+    "flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl transition text-xs sm:text-sm";
 
   return (
     <div
