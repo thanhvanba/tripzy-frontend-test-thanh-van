@@ -61,7 +61,6 @@ const CustomDatePicker = ({
         allowEmpty
         size="large"
         value={rangeValue}
-        // onChange={handleChange}
         onOpenChange={handleOpenChange}
         open={open}
         placeholder={[placeholder, placeholder]}
@@ -75,7 +74,7 @@ const CustomDatePicker = ({
         panelRender={() => (
           <div className="flex gap-3 md:gap-6 p-2 md:p-4 bg-white rounded-xl">
             {/* MONTH 1 */}
-            <div className="w-1/2 md:w-[280px]">
+            <div className="w-1/2 h-auto md:w-[280px]">
               <div className="flex justify-between items-center mb-2">
                 <button
                   className="p-2 hover:bg-gray-200 rounded-md"
@@ -100,7 +99,7 @@ const CustomDatePicker = ({
             </div>
 
             {/* MONTH 2 */}
-            <div className="w-1/2 md:w-[280px]">
+            <div className="w-1/2 h-auto md:w-[280px]">
               <div className="flex justify-between items-center mb-2">
                 <div className="w-8" />
                 <div className="font-semibold text-xs sm:text-sm md:text-base text-center">
@@ -156,7 +155,7 @@ function renderCell(
           : !isCurrentMonth
           ? "text-gray-300"
           : isToday
-          ? "border border-[#19c0ff] text-[#19c0ff] font-bold"
+          ? "text-[#19c0ff] font-bold"
           : isWeekend
           ? "text-red-500"
           : "text-black"

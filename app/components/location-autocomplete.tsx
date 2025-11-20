@@ -1,6 +1,6 @@
 "use client";
 
-import { Select } from "antd";
+import { AutoComplete, Input, Select } from "antd";
 import { FaBusAlt } from "react-icons/fa";
 import "../globals.css";
 import { locations } from "../data/location";
@@ -17,7 +17,7 @@ interface LocationSelectProps {
   placeholder?: string;
 }
 
-export function LocationSelect({
+export function LocationAutoComplete({
   value,
   onChange,
   placeholder = "Enter city, location...",
@@ -25,7 +25,7 @@ export function LocationSelect({
   const options = locations.map((loc: Location) => ({
     value: loc.english_name,
     label: (
-      <div className="px-3 sm:px-4 py-2">
+      <div className="px-1 py-2">
         <div className="font-semibold text-xs sm:text-sm text-[#0E0E12]">
           {loc.short_code} - {loc.english_name}
         </div>
@@ -36,20 +36,24 @@ export function LocationSelect({
     ),
   }));
   return (
-    <Select
-      prefix={<FaBusAlt size={20} />}
-      allowClear
+    <AutoComplete
+      value={value}
       size="large"
-      value={value || undefined}
       onChange={onChange}
-      placeholder={placeholder}
       options={options}
-      optionLabelProp="value"
+      placeholder={placeholder}
+      prefix={<FaBusAlt size={20} />}
       filterOption={(input, option) =>
-        (option?.value as string).toLowerCase().includes(input.toLowerCase())
+        option
+          ? option.value.toLowerCase().includes(input.toLowerCase())
+          : false
       }
       className="w-full custom-select h-[52px]!"
-      dropdownStyle={{ width: "calc(100vw - 32px)", maxWidth: 400 }}
+      styles={{
+        popup: {
+          root: { width: 400, maxWidth: "calc(100vw - 60px)" },
+        },
+      }}
     />
   );
 }

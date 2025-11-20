@@ -65,17 +65,17 @@
   margin-right: 8px !important;
 }
 
-/* Ẩn cái thumb highlight (viền chạy chạy) */
+/* Ẩn cái thumb highlight */
 .custom-date-picker .ant-picker-range-separator {
-  display: none !important; /* bỏ dấu gạch giữa 2 ô */
+  display: none !important;
 }
 
 .custom-date-picker .ant-picker-focused {
-  box-shadow: none !important; /* bỏ shadow xanh khi focus */
+  box-shadow: none !important;
 }
 
 .custom-date-picker .ant-picker-active-bar {
-  display: none !important; /* chính là cái bar chạy chạy */
+  display: none !important;
 }
 
 /* custom select */
@@ -113,4 +113,18 @@
 
 .custom-input-number .ant-input-number-prefix {
   margin-right: 8px !important;
+}
+
+/* custom checkbox */
+.custom-checkbox .ant-checkbox .ant-checkbox-inner {
+  border-color: #19c0ff !important;
+}
+
+.custom-checkbox .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #19c0ff !important;
+  border-color: #19c0ff !important;
+}
+
+.custom-checkbox .ant-checkbox-checked .ant-checkbox-inner:after {
+  border-color: white !important;
 }

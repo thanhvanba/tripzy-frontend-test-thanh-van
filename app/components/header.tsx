@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
-import { FaStarOfLife } from "react-icons/fa";
+"use client";
 
+import Link from "next/link";
+import { useEffect, useState } from "react";
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => {
@@ -11,21 +12,16 @@ export default function Header() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full h-24 flex items-center z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full h-16 md:h-24 flex items-center z-50 transition-all ${
         isScrolled
           ? "bg-white shadow-md text-gray-900"
           : "bg-transparent text-white"
       }`}
     >
       <div className="container ">
-        <div className="flex items-center gap-2 text-[#19C0FF]">
-          <span className="flex items-center justify-center font-bold">
-            <FaStarOfLife size={40} />
-          </span>
-          <span className="text-xl sm:text-2xl md:text-[28px] font-bold">
-            Tripzy
-          </span>
-        </div>
+        <Link href="/">
+          <img src="/logo.svg" alt="Tripzy" className="h-8 w-auto md:h-10" />
+        </Link>
       </div>
     </nav>
   );

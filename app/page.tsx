@@ -31,23 +31,25 @@ export default function HomePage() {
 
         <div className="container absolute top-3/4 left-1/2 -translate-x-1/2">
           <div className="flex flex-col items-center gap-6 w-full rounded-2xl shadow-lg bg-white">
-            <div className="flex justify-center w-full rounded-2xl shadow-lg">
+            <div className="flex justify-center w-full rounded-2xl overflow-hidden shadow-lg">
               <Segmented
                 block
                 value={activeTab}
                 onChange={(val) => setActiveTab(val as string)}
                 size="large"
-                className="w-full p-2 sm:p-3! bg-white! tabs-home"
+                className="w-full p-2! sm:p-3! bg-white! tabs-home"
                 options={[
                   {
                     label: (
                       <div
-                        className={`flex items-center justify-center sm:justify-start px-2 sm:px-4 py-2 sm:py-3 gap-2 sm:gap-3 text-xs sm:text-sm md:text-base text-[#121216] rounded-lg hover:bg-[#EBF9FF] ${
+                        className={`flex items-center justify-center sm:justify-start px-2 sm:px-4 py-2 sm:py-3 gap-2 sm:gap-3 text-xs sm:text-sm md:text-lg text-[#121216] font-medium rounded-lg hover:bg-[#EBF9FF] ${
                           activeTab === "bus" ? "bg-[#EBF9FF]" : ""
                         }`}
                       >
-                        <div className="bg-[#D3F3FF] rounded-full p-1.5 sm:p-2.5">
-                          <FaBusAlt className="text-[#19C0FF] w-5 h-5 sm:w-7 sm:h-7" />
+                        <div className="bg-[#D3F3FF] rounded-full p-1.5 sm:p-2.5 sm:h-12 sm:w-12">
+                          <div className="sm:w-7 sm:h-7 flex justify-center items-center">
+                            <FaBusAlt className="text-[#19C0FF] w-auto h-3.5 sm:h-[21px]" />
+                          </div>
                         </div>
                         <span className="hidden sm:inline">Bus & Shuttle</span>
                         <span className="sm:hidden">Bus</span>
@@ -58,12 +60,14 @@ export default function HomePage() {
                   {
                     label: (
                       <div
-                        className={`flex items-center justify-center sm:justify-start px-2 sm:px-4 py-2 sm:py-3 gap-2 sm:gap-3 text-xs sm:text-sm md:text-base text-[#121216] rounded-lg hover:bg-[#F4FFEB] ${
+                        className={`flex items-center justify-center sm:justify-start px-2 sm:px-4 py-2 sm:py-3 gap-2 sm:gap-3 text-xs sm:text-sm md:text-lg text-[#121216] font-medium rounded-lg hover:bg-[#F4FFEB] ${
                           activeTab === "hotel" ? "bg-[#F4FFEB]" : "bg-white"
                         }`}
                       >
-                        <div className="bg-[#E8FBCC] rounded-full p-1.5 sm:p-2.5">
-                          <FaHotel className="text-[#447A11] w-5 h-5 sm:w-7 sm:h-7" />
+                        <div className="bg-[#E8FBCC] rounded-full p-1.5 sm:p-2.5 sm:h-12 sm:w-12">
+                          <div className="sm:w-7 sm:h-7 flex justify-center items-center">
+                            <FaHotel className="text-[#447A11] w-auto h-3.5 sm:h-[21px]" />
+                          </div>
                         </div>
                         <span className="hidden sm:inline">
                           Hotel & Accommodation
@@ -76,12 +80,14 @@ export default function HomePage() {
                   {
                     label: (
                       <div
-                        className={`flex items-center justify-center sm:justify-start px-2 sm:px-4 py-2 sm:py-3 gap-2 sm:gap-3 text-xs sm:text-sm md:text-base text-[#121216] rounded-lg hover:bg-[#EBF4FF] ${
+                        className={`flex items-center justify-center sm:justify-start px-2 sm:px-4 py-2 sm:py-3 gap-2 sm:gap-3 text-xs sm:text-sm md:text-lg text-[#121216] font-medium rounded-lg hover:bg-[#EBF4FF] ${
                           activeTab === "flight" ? "bg-[#EBF4FF]" : "bg-white"
                         }`}
                       >
-                        <div className="bg-[#E1EDFE] rounded-full p-1.5 sm:p-2.5">
-                          <MdFlightTakeoff className="text-[#5664E1] w-5 h-5 sm:w-7 sm:h-7" />
+                        <div className="bg-[#E1EDFE] rounded-full p-1.5 sm:p-2.5 sm:h-12 sm:w-12">
+                          <div className="sm:w-7 sm:h-7 flex justify-center items-center">
+                            <MdFlightTakeoff className="text-[#5664E1] w-auto h-4 sm:h-[23px]" />
+                          </div>
                         </div>
                         <span className="">Flight</span>
                       </div>
@@ -91,7 +97,7 @@ export default function HomePage() {
                 ]}
               />
             </div>
-            <div className="w-full mb-6 px-4 sm:px-6">
+            <div className="w-full mb-6">
               {activeTab === "bus" && <SearchForm />}
               {activeTab === "hotel" && (
                 <p className="text-[#767689] text-base sm:text-lg text-center py-8 sm:py-12">

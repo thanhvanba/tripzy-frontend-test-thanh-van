@@ -41,43 +41,8 @@ export const locations: Location[] = [
     code_state: "+672 - Norfolk Island",
   },
   {
-    short_code: "NP",
+    short_code: "MP",
     english_name: "Northern Mariana Islands",
     code_state: "+1 670 - Northern Mariana Islands",
-  },
-  {
-    short_code: "BT",
-    english_name: "Bhutan",
-    code_state: "+975 - Bhutan",
-  },
-  {
-    short_code: "HN",
-    english_name: "Honduras",
-    code_state: "+504 - Honduras",
-  },
-  {
-    short_code: "HK",
-    english_name: "Hong Kong",
-    code_state: "+852 - Hong Kong",
-  },
-  {
-    short_code: "SG",
-    english_name: "Singapore",
-    code_state: "+65 - Singapore",
-  },
-  {
-    short_code: "HCM",
-    english_name: "Ho Chi Minh City",
-    code_state: "+84 - Ho Chi Minh City",
-  },
-  {
-    short_code: "HN",
-    english_name: "Hanoi",
-    code_state: "+84 - Hanoi",
-  },
-  {
-    short_code: "BT",
-    english_name: "Ben Thanh",
-    code_state: "+84 - Ben Thanh",
   },
 ];
